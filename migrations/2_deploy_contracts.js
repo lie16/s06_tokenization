@@ -7,7 +7,7 @@ module.exports = async function(deployer) {
     await deployer.deploy(MyToken, process.env.INITIAL_TOKENS);
     //await deployer.deploy(MyToken, 1000000000);
     await deployer.deploy(MyTokenSales, 1, addr[0], MyToken.address);
-    let tokenInstance = await MyToken.deployed();
+    let instance = await MyToken.deployed();
     //await tokenInstance.transfer(MyTokenSales.address, 1000000000);
-    await tokenInstance.transfer(MyTokenSales.address, process.env.INITIAL_TOKENS);
+    await instance.transfer(MyTokenSales.address, process.env.INITIAL_TOKENS);
 };

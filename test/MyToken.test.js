@@ -1,12 +1,13 @@
+const Token = artifacts.require("MyToken");
+
 const chai = require("./chaisetup.js");
 const BN = web3.utils.BN;
 const expect = chai.expect;
-const chaiBN = require('chai-bn')(BN);
 
+/*const chaiBN = require('chai-bn')(BN);
 chai.use(chaiBN);
-
 var chaiAsPromised = require("chai-as-promised");
-chai.use(chaiAsPromised);
+chai.use(chaiAsPromised);*/
 
 require('dotenv').config({path: '../.env'});
 
