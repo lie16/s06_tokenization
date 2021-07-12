@@ -36,9 +36,7 @@ it("should be possible to buy one token by simply sending ether to the smart con
 
     let kycInstance = await KycContract.deployed();
     await kycInstance.setKycCompleted(recipient);
-
     await expect(tokenSaleInstance.sendTransaction({from: recipient, value: web3.utils.toWei("1", "wei")})).to.be.fulfilled;
     return expect(balanceBeforeAccount + 1).to.be.bignumber.equal(await tokenInstance.balanceOf.call(recipient));
-
 });
 });
